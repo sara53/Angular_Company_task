@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Categories</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+      
+            <a class="nav-link" routerLink="/" [queryParams]="{id:cat.cid}"  *ngFor="let cat of categories">{{cat.name}}</a>
+    
+      </ul>
+    </div>
+  </nav>
+
+  <div class="editPadding">
+    <div class="row">
+        <table class="table table-striped col-6">
+            <thead>
+              <tr>
+          
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Title</th>
+                <th scope="col">Product Category</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+              <tr *ngFor="let product of FilterdProduct" (click) = "ShowDetails(product.pid)">
+                <th scope="row">{{product.pid}}</th>
+                <td>{{product.title}}</td>
+                <td>{{catName}}</td>
+            
+              </tr>
+         
+           
+            </tbody>
+          </table>
+
+        
+        <table class="table table-striped col-6" *ngIf="tab">
+            <thead>
+                <tr>
+            
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Title</th>
+                <th scope="col">Product Category</th>
+                <th scope="col">Product Price</th>
+
+                </tr>
+            </thead>
+            <tbody>
+        
+                <tr>
+                    <th scope="row">{{product.pid}}</th>
+                    <td>{{product.title}}</td>
+                    <td>{{catName}}</td>
+                    <td>{{product.price}}</td>
+
+                </tr>
+            
+            
+            </tbody>
+        </table>
+       
+    </div>
+  </div>
+
+
+
+
+
+
